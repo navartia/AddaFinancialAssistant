@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.navartia.adda.ui.BalanceSheetFragment"
+    android:rowCount="1"
+    android:columnCount="1"
+    android:background="#ebff98">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="@dimen/adda_button_standard_width"
+                    android:layout_height="@dimen/adda_button_standard_height"
+                    android:text="Income"
+                    android:textStyle="bold"
+                    android:id="@+id/button_income"
+                    android:gravity="center"
+                    android:textSize="15dp" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Balance Sheet"
+                        android:textSize="12pt"
+                        android:textStyle="bold"
+                        android:id="@+id/textView"
+                        android:layout_gravity="center"
+                        android:gravity="center" />
+                </FrameLayout>
+
+                <Button
+                    android:layout_width="@dimen/adda_button_standard_width"
+                    android:layout_height="@dimen/adda_button_standard_height"
+                    android:text="Expenses"
+                    android:textStyle="bold"
+                    android:id="@+id/button_expenses"
+                    android:gravity="center"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="154dp"
+                android:layout_margin="12dp"
+                android:id="@+id/listView"
+                android:layout_weight="1.05" />
+
+        </LinearLayout>
+    </RelativeLayout>
+

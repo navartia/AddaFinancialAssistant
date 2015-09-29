@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.navartia.adda.ui.BudgetFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ebff98"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IN"
+            android:textSize="8pt"
+            android:textStyle="bold"
+            android:id="@+id/button"
+            android:layout_alignBottom="@+id/textView2" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="OUT"
+            android:textStyle="bold"
+            android:textSize="8pt"
+            android:id="@+id/button2"
+            android:layout_alignParentTop="true"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>
