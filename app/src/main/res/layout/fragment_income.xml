@@ -1,16 +1,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.navartia.adda.ui.IncomeFragment">
+    android:layout_height="match_parent" tools:context="com.navartia.adda.ui.IncomeFragment"
+    android:background="#ebff98">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Income"
-        android:id="@+id/textView2"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="@dimen/adda_button_standard_width"
+                android:layout_height="@dimen/adda_button_standard_height"
+                android:text="Done"
+                android:id="@+id/button_income_done" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Income"
+                    android:id="@+id/textView2"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <Button
+                android:layout_width="@dimen/adda_button_standard_width"
+                android:layout_height="@dimen/adda_button_standard_height"
+                android:text="Cancel"
+                android:id="@+id/button_income_cancel" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>

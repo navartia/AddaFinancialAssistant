@@ -2,7 +2,10 @@ package com.navartia.adda.ui;
 
 import android.os.Bundle;
 
+import com.navartia.adda.R;
+
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class IncomeFragment extends UIFragment {
     // Static methods
@@ -21,5 +24,11 @@ public class IncomeFragment extends UIFragment {
     protected void bindView() {
         // Bind ButterKnife
         ButterKnife.bind(this, view);
+    }
+
+    @OnClick(R.id.button_income_cancel)
+    public void clickButtonCancel() {
+        // Send message to the activity
+        mListener.sendMessage("Cancel", this);
     }
 }

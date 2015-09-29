@@ -70,16 +70,23 @@ public class MainActivity extends Activity implements FragmentInteractionListene
         switch(message) {
             case "Income":
                 UIFragment income = IncomeFragment.newInstance(R.layout.fragment_income);
-                //hideFragment((UIFragment) mSectionsPagerAdapter.getFragment(0));
                 replaceFragment(R.id.dialog_layout, income);
-                //showFragment(income);
+                break;
+            case "Expenses":
+                UIFragment expenses = ExpensesFragment.newInstance(R.layout.fragment_expenses);
+                replaceFragment(R.id.dialog_layout, expenses);
                 break;
         }
     }
 
     @Override
     public void sendMessage(String message, Object data) {
+        switch(message) {
+            case "Cancel":
+                removeFragment((UIFragment) data);
+                break;
 
+        }
     }
 
     // FragmentChangeListener
@@ -100,6 +107,15 @@ public class MainActivity extends Activity implements FragmentInteractionListene
         ft.commit();
 
         Log.d("Adda", "Replace");
+    }
+
+    @Override
+    public void removeFragment(UIFragment fragment) {
+        ft = getFragmentManager().beginTransaction();
+        ft.remove(fragment);
+        ft.commit();
+
+        Log.d("Adda", "Remove");
     }
 
     @Override

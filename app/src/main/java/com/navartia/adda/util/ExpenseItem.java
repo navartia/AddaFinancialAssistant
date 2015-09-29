@@ -1,5 +1,9 @@
 package com.navartia.adda.util;
 
-public class ExpenseItem extends Item {
+import java.util.Date;
 
+public class ExpenseItem extends RecordItem {
+    public ExpenseItem(int id, String name, Money amount, Date timestamp) {
+        super(id, name, amount, timestamp);
+    }
 }
