@@ -23,8 +23,6 @@ public class DatabaseHelper extends SQLiteOpenHelper
     private static String [] Columns_budgetItem = new String[2];
     private static String [] Columns_balanceSheet = new String[5];
 
-    //Adding columns' connection string.
-    private String connString = "";
 
     public DatabaseHelper(Context context, String dbType)
     {
@@ -36,10 +34,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase db)
     {
         //Creating tables.
-        db.execSQL("CREATE TABLE " + TABLE_budget + TB_BudgetConnectionString);        //Budget table.
-        db.execSQL("CREATE TABLE " + TABLE_accounts + connString);      //Accounts table.
-        db.execSQL("CREATE TABLE " + TABLE_budgetItem + connString);    //Budget Item table.
-        db.execSQL("CREATE TABLE " + TABLE_balanceSheet + connString);  //Balance Sheet table.
+        db.execSQL("CREATE TABLE " + TABLE_budget + TB_BudgetConnectionString());        //Budget table.
+        db.execSQL("CREATE TABLE " + TABLE_accounts + TB_AccountsConnectionString());      //Accounts table.
+        db.execSQL("CREATE TABLE " + TABLE_budgetItem + TB_BudgetItemConnectionString());    //Budget Item table.
+        db.execSQL("CREATE TABLE " + TABLE_balanceSheet + TB_BalanceSheetConnectionString());  //Balance Sheet table.
 
     }
 
@@ -47,7 +45,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
         //Something traditional.
-        db.execSQL("DROP TABLE IF EXISTS" + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS" + TABLE_budget);
+        db.execSQL("DROP TABLE IF EXISTS" + TABLE_accounts);
+        db.execSQL("DROP TABLE IF EXISTS" + TABLE_budgetItem);
+        db.execSQL("DROP TABLE IF EXISTS" + TABLE_balanceSheet);
         onCreate(db);
     }
 
@@ -65,6 +66,53 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
         //Assigning an appropriate type for a particular table and uniting all these to construct the connection string.
         conString = "(" + Columns_budget[0] + " INTEGER PRIMARY KEY AUTOINCREMENT," + Columns_budget[1] + "INTEGER," + Columns_budget[2] + "INTEGER," + Columns_budget[3] + "INTEGER," + Columns_budget[4] + "TEXT)";
+
+        return conString;
+    }
+
+    private String TB_AccountsConnectionString ()
+    {
+        String conString;
+        //Assigning values to columns.
+
+        Columns_accounts[0] = "account_id";
+        Columns_accounts[1] = "account_name";
+
+
+        //Assigning an appropriate type for a particular table and uniting all these to construct the connection string.
+        conString = "(" + Columns_accounts[0] + " INTEGER PRIMARY KEY AUTOINCREMENT," + Columns_accounts[1] + "TEXT)";
+
+        return conString;
+    }
+
+    private String TB_BudgetItemConnectionString ()
+    {
+        String conString;
+        //Assigning values to columns.
+
+        Columns_budgetItem[0] = "budget_item_id";
+        Columns_budgetItem[1] = "budget_item_name";
+
+
+        //Assigning an appropriate type for a particular table and uniting all these to construct the connection string.
+        conString = "(" + Columns_budgetItem[0] + " INTEGER PRIMARY KEY AUTOINCREMENT," + Columns_budgetItem[1] + "TEXT)";
+
+        return conString;
+    }
+
+    private String TB_BalanceSheetConnectionString ()
+    {
+        String conString;
+        //Assigning values to columns.
+
+        Columns_balanceSheet[0] = "balance_sheet_id";
+        Columns_balanceSheet[1] = "account_id";
+        Columns_balanceSheet[2] = "budget_item_id";
+        Columns_balanceSheet[3] = "budget_item_amount";
+        Columns_balanceSheet[4] = "balance_timestamp";
+
+        //Assigning an appropriate type for a particular table and uniting all these to construct the connection string.
+        conString = "(" + Columns_balanceSheet[0] + " INTEGER PRIMARY KEY AUTOINCREMENT," + Columns_balanceSheet[1] + "INTEGER," + Columns_balanceSheet[2] + "INTEGER," + Columns_balanceSheet[3] + "INTEGER," + Columns_balanceSheet[4] + "TEXT)";
 
         return conString;
     }
