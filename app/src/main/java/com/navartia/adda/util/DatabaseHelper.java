@@ -6,25 +6,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper
 {
-    // Database Version
+    //Database Version
     private static final int DATABASE_VERSION = 1;
 
-    // Database Name
+    //Database Name
     private static final String DATABASE_NAME = "adda";
-    // Table Name
-    private static final String TABLE_budget = "Budget";
-    private static final String TABLE_accounts = "Accounts";      //???
-    private static final String TABLE_budgetItem = "Budget Item";
-    private static final String TABLE_balanceSheet = "Balance Sheet";
+    //Table Name
+    public static final String TABLE_budget = "Budget";
+    public static final String TABLE_accounts = "Accounts";      //???
+    public static final String TABLE_budgetItem = "Budget Item";
+    public static final String TABLE_balanceSheet = "Balance Sheet";
 
     //Columns
-    private static String [] Columns_budget = new String[5];
-    private static String [] Columns_accounts = new String[2];
-    private static String [] Columns_budgetItem = new String[2];
-    private static String [] Columns_balanceSheet = new String[5];
+    public static String [] Columns_budget = new String[5];
+    public static String [] Columns_accounts = new String[2];
+    public static String [] Columns_budgetItem = new String[2];
+    public static String [] Columns_balanceSheet = new String[6];
 
-
-    public DatabaseHelper(Context context, String dbType)
+    public DatabaseHelper(Context context, String dbType, SQLiteDatabase.CursorFactory factory, int version)
     {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         SQLiteDatabase db = this.getWritableDatabase();
@@ -107,12 +106,13 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
         Columns_balanceSheet[0] = "balance_sheet_id";
         Columns_balanceSheet[1] = "account_id";
-        Columns_balanceSheet[2] = "budget_item_id";
-        Columns_balanceSheet[3] = "budget_item_amount";
+        Columns_balanceSheet[2] = "category_id";
+        Columns_balanceSheet[3] = "amount";
         Columns_balanceSheet[4] = "balance_timestamp";
+        Columns_balanceSheet[5] = "remarks";
 
         //Assigning an appropriate type for a particular table and uniting all these to construct the connection string.
-        conString = "(" + Columns_balanceSheet[0] + " INTEGER PRIMARY KEY AUTOINCREMENT," + Columns_balanceSheet[1] + "INTEGER," + Columns_balanceSheet[2] + "INTEGER," + Columns_balanceSheet[3] + "INTEGER," + Columns_balanceSheet[4] + "TEXT)";
+        conString = "(" + Columns_balanceSheet[0] + " INTEGER PRIMARY KEY AUTOINCREMENT," + Columns_balanceSheet[1] + "INTEGER," + Columns_balanceSheet[2] + "INTEGER," + Columns_balanceSheet[3] + "INTEGER," + Columns_balanceSheet[4] +"TEXT," + Columns_balanceSheet[5]+"TEXT)";
 
         return conString;
     }
