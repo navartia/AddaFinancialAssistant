@@ -4,13 +4,183 @@
     android:background="#ebff98">
 
     <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Expenses"
-        android:id="@+id/textView4"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="@dimen/adda_button_standard_width"
+                android:layout_height="@dimen/adda_button_standard_height"
+                android:textStyle="bold"
+                android:textSize="7pt"
+                android:text="Done"
+                android:id="@+id/button_income_done" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Expenses"
+                    android:textSize="12pt"
+                    android:textStyle="bold"
+                    android:id="@+id/textView_Expenses"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <Button
+                android:layout_width="@dimen/adda_button_standard_width"
+                android:layout_height="@dimen/adda_button_standard_height"
+                android:text="Cancel"
+                android:textSize="7pt"
+                android:textStyle="bold"
+                android:id="@+id/button_income_cancel" />
+
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/tableRow_date">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="8pt"
+                    android:textStyle="bold"
+                    android:id="@+id/textView2_date"
+                    android:enabled="true"/>
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:ems="10"
+                    android:id="@+id/editText"
+                    android:layout_column="1"
+                    android:layout_weight="4"
+                    android:clickable="true" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/tableRow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account"
+                    android:textSize="8pt"
+                    android:textStyle="bold"
+                    android:id="@+id/textView2_account"
+                    android:enabled="true"/>
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_Account"
+                    android:layout_column="1"
+                    android:layout_weight="4"
+                    android:clickable="true"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:textSize="8pt"
+                    android:textStyle="bold"
+                    android:id="@+id/textView2_category"
+                    android:enabled="true"/>
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_"
+                    android:layout_column="1"
+                    android:layout_weight="4"
+                    android:clickable="true"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/textView4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:textSize="8pt"
+                    android:textStyle="bold"
+                    android:id="@+id/textView2_amount"
+                    android:enabled="true"/>
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/editText4"
+                    android:layout_column="1"
+                    android:layout_weight="4"
+                    android:clickable="true" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Content"
+                    android:textStyle="bold"
+                    android:textSize="8pt"
+                    android:id="@+id/textView2_content" />
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_Content"
+                    android:layout_column="1"
+                    android:layout_weight="4"
+                    android:clickable="true"
+                    android:textStyle="bold" />
+            </TableRow>
+
+        </TableLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>

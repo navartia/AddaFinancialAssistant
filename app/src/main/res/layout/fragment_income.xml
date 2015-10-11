@@ -51,127 +51,220 @@
 
         <TableLayout
             android:layout_width="fill_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="#040404"
+            android:layout_margin="5dp">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:id="@+id/tablerow_date">
+                android:id="@+id/tableRow_date">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Date"
-                    android:textSize="8pt"
-                    android:textStyle="bold"
-                    android:id="@+id/textView_date"
-                    android:enabled="true"/>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:layout_weight="1">
 
-                <EditText
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText"
-                    android:layout_column="1"
-                    android:layout_weight="4"
-                    android:clickable="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:textSize="8pt"
+                        android:textStyle="bold"
+                        android:id="@+id/textView_date"
+                        android:enabled="true"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView5"
+                        android:layout_gravity="left|center_vertical" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        android:layout_gravity="left|center_vertical" />
+
+                </FrameLayout>
+
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:id="@+id/">
+                android:id="@+id/tableRow">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Account"
-                    android:textSize="8pt"
-                    android:textStyle="bold"
-                    android:id="@+id/textView_account"
-                    android:enabled="true"/>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:layout_weight="1">
 
-                <EditText
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Account"
+                        android:textSize="8pt"
+                        android:textStyle="bold"
+                        android:id="@+id/textView_account"
+                        android:enabled="true"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText_Account"
-                    android:layout_column="1"
-                    android:layout_weight="4"
-                    android:clickable="true" />
-            </TableRow>
+                    android:layout_weight="3"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Category"
-                    android:textSize="8pt"
-                    android:textStyle="bold"
-                    android:id="@+id/textView_category"
-                    android:enabled="true"/>
-
-                <EditText
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText_"
-                    android:layout_column="1"
-                    android:layout_weight="4"
-                    android:clickable="true" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editText5"
+                        android:layout_gravity="left|center_vertical" />
+                </FrameLayout>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:id="@+id/textView4">
+                android:orientation="vertical">
 
-              <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Amount"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:id="@+id/textView_amount"
-                android:enabled="true"/>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:layout_weight="1">
 
-                <EditText
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText_Amount"
-                    android:layout_column="1"
-                    android:layout_weight="4"
-                    android:clickable="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Category"
+                        android:textSize="8pt"
+                        android:textStyle="bold"
+                        android:id="@+id/textView_category"
+                        android:enabled="true"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editText6"
+                        android:layout_gravity="left|top" />
+                </FrameLayout>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Content"
-                    android:textStyle="bold"
-                    android:textSize="8pt"
-                    android:id="@+id/textView_content" />
-                <EditText
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText_Content"
-                    android:layout_column="1"
-                    android:layout_weight="4"
-                    android:clickable="true" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount"
+                        android:textSize="8pt"
+                        android:textStyle="bold"
+                        android:id="@+id/textView_amount"
+                        android:enabled="true"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff">
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:id="@+id/editText3"
+                        android:layout_gravity="left|center_vertical" />
+                </FrameLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Comment"
+                        android:textSize="8pt"
+                        android:textStyle="bold"
+                        android:id="@+id/textView_comment"
+                        android:enabled="true"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editText7"
+                        android:layout_gravity="left|center_vertical" />
+                </FrameLayout>
             </TableRow>
 
         </TableLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
+            android:layout_height="match_parent"
+            android:layout_weight="1"></FrameLayout>
 
     </LinearLayout>
 
